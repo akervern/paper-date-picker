@@ -405,7 +405,7 @@
         return cssClass;
       },
       _isDisabled: function(day, date) {
-        return !day || !this._withinValidRange(date) || date.getUTCDay() === 5 || date.getUTCDay() === 6;
+        return !day || !this._withinValidRange(date) || moment(date).isoWeekday() >= 6;
       },
       _getMonthClass: function(name, month) {
         return name + ' month-' + month.year + '-' + month.month;
